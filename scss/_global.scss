@@ -1,0 +1,11 @@
+@import "_vars";
+@import "_mixin";
+
+html,
+body {
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
