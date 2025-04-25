@@ -4,14 +4,61 @@
 @import "_mixin";
 
 
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:regular,500,700&display=swap");
+
+
 .header {
-  background-color: #000;
-  color: wheat;
-  font-size: 60px;
+  background-color: $white;
+  color: $red;
+
+  &__container {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 160px 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__menu {}
+
+  &__list {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $red;
+    }
+  }
+
+  &__logo {}
+
+  &__wrap {
+    text-align: end;
+  }
+
+  &__cart {
+    text-align: right;
+    font-size: 24px;
+    transition: font-size 0.3s;
+
+    &:hover {
+      font-size: 25px;
+      line-height: 1.4;
+    }
+  }
+
+
+  &__button {
+    display: none;
+  }
 }
 
-
-
+.hero {}
 
 
 

@@ -1,26 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:regular,500,700&display=swap");
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-:focus, :active {
+:focus,
+:active {
   outline: none;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav,
+footer,
+header,
+aside {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -31,7 +40,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
 }
 
@@ -48,8 +59,10 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -64,7 +77,12 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -72,14 +90,175 @@ h1, h2, h3, h4, h5, h6 {
 html,
 body {
   height: 100%;
+  font-family: "DM Sans", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -0.56px;
+}
+
+.no-scroll {
+  overflow-y: hidden;
 }
 
 .main {
   flex-grow: 1;
 }
 
+.container {
+  max-width: 1280px;
+  padding-inline: 32px;
+  margin-inline: auto;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.logo__img {
+  scale: 1;
+  transition: scale 0.3s;
+}
+.logo__name {
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.logo:hover .logo__img {
+  scale: 1.1;
+}
+
 .header {
-  background-color: #000;
-  color: wheat;
-  font-size: 60px;
+  background-color: #fff;
+  color: #AE1332;
+}
+.header__container {
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.header__list {
+  display: flex;
+  gap: 16px;
+}
+.header__link {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.header__link:hover {
+  border-color: #AE1332;
+}
+.header__wrap {
+  text-align: end;
+}
+.header__cart {
+  text-align: right;
+  font-size: 24px;
+  transition: font-size 0.3s;
+}
+.header__cart:hover {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.header__button {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding-inline: 20px;
+  }
+  .header {
+    position: relative;
+  }
+  .header__container {
+    grid-template-columns: 1fr 24px;
+  }
+  .header__menu {
+    position: fixed;
+    padding-top: 125px;
+    height: calc(100vh - 50px);
+    width: 100%;
+    margin-left: -20px;
+    top: 50px;
+    background-color: #AE1332;
+    overflow-y: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .header__menu.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .header__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  .header__link {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .header__link:hover {
+    border-color: #fff;
+  }
+  .header__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    text-align: center;
+  }
+  .header__button span {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #AE1332;
+  }
+  .header__button::after, .header__button::before {
+    content: "";
+    position: absolute;
+    background-color: #AE1332;
+    border-radius: 1px;
+    height: 2px;
+    width: 10px;
+    left: 2px;
+  }
+  .header__button::before {
+    top: 1px;
+    transition: rotate 0.2s, top 0.3s 0.2s;
+  }
+  .header__button::after {
+    top: 21px;
+    width: 14px;
+    transition: rotate 0.2s, top 0.3s 0.2s;
+  }
+  .header__button.active span {
+    display: none;
+  }
+  .header__button.active::after, .header__button.active::before {
+    width: 20px;
+    top: 12px;
+  }
+  .header__button.active::before {
+    transition: rotate 0.3s 0.2s, top 0.2s;
+    rotate: 45deg;
+  }
+  .header__button.active::after {
+    transition: rotate 0.3s 0.2s, top 0.2s;
+    rotate: -45deg;
+  }
 }/*# sourceMappingURL=style.css.map */

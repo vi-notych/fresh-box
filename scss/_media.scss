@@ -1,0 +1,111 @@
+@media (max-width:650px) {
+  .container {
+    padding-inline: 20px;
+  }
+
+  .header {
+    position: relative;
+
+    &__container {
+      grid-template-columns: 1fr 24px;
+    }
+
+    &__menu {
+      position: fixed;
+      padding-top: 125px;
+      height: calc(100vh - 50px);
+      width: 100%;
+      margin-left: -20px;
+      top: 50px;
+      background-color: $red;
+      overflow-y: auto;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: $white;
+    }
+
+    &__link {
+      width: fit-content;
+
+      &:hover {
+        border-color: $white;
+      }
+    }
+
+    &__button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-inline: 2px;
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        ;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $red;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $red;
+        border-radius: 1px;
+        height: 2px;
+        width: 10px;
+        left: 2px;
+      }
+      &::before {
+        top: 1px;
+        transition: rotate 0.2s, top 0.3s 0.2s;
+      }
+      
+      &::after {
+        top: 21px;
+        width: 14px;
+        transition: rotate 0.2s, top 0.3s 0.2s;
+      }
+
+      &.active {
+        span {
+          display: none;
+        }
+
+        &::after,
+        &::before {
+          width: 20px;
+          top: 12px;
+        }
+
+        &::before {
+          transition: rotate 0.3s 0.2s, top 0.2s;
+          rotate: 45deg;
+        }
+
+        &::after {
+          transition: rotate 0.3s 0.2s, top 0.2s;
+          rotate: -45deg;
+        }
+      }
+    }
+  }
+}
