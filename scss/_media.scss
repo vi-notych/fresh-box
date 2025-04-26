@@ -1,3 +1,53 @@
+@media (max-width:1050px) {
+  .hero {
+    &__wrapper {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+
+    &__center {
+      order: 0;
+      grid-column: span 2;
+      max-width: 486px;
+      width: 100%;
+    }
+
+    &__center-bg {
+      scale: 0.7;
+
+      &_banana {
+        top: 40px;
+        left: -140px;
+      }
+
+      &_strawberry {
+        top: -80px;
+        right: -80px;
+      }
+    }
+
+    &__left {
+      padding-top: 0;
+      order: 1;
+      max-width: 250px;
+    }
+
+    &__left-text {
+      margin-left: -32px;
+    }
+
+    &__right {
+      padding-top: 0;
+      order: 2;
+      max-width: 250px;
+    }
+
+    &__btn-box {
+      margin-right: -32px;
+    }
+  }
+}
+
 @media (max-width:650px) {
   .container {
     padding-inline: 20px;
@@ -8,6 +58,7 @@
 
     &__container {
       grid-template-columns: 1fr 24px;
+      justify-items: start;
     }
 
     &__menu {
@@ -22,6 +73,7 @@
       transform: translateX(100%);
       opacity: 0;
       transition: transform 0.3s, opacity 0.3s;
+      z-index: 5;
 
       &.active {
         transform: translateX(0);
@@ -74,13 +126,14 @@
         width: 10px;
         left: 2px;
       }
+
       &::before {
-        top: 1px;
+        top: 5px;
         transition: rotate 0.2s, top 0.3s 0.2s;
       }
-      
+
       &::after {
-        top: 21px;
+        top: 17px;
         width: 14px;
         transition: rotate 0.2s, top 0.3s 0.2s;
       }
@@ -107,5 +160,64 @@
         }
       }
     }
+  }
+
+  .hero {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 0;
+    }
+
+    &__center {
+      grid-column: span 1;
+    }
+
+    &__center-wrap {
+      margin-bottom: 70px;
+    }
+
+    &__center-bg {
+      scale: 0.4;
+
+      &_banana {
+        top: -45px;
+        left: -75px;
+      }
+
+      &_strawberry {
+        top: -95px;
+        right: -20px;
+      }
+    }
+
+    &__left {
+      margin-bottom: 44px;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &__btn-box {
+      margin-bottom: 44px;
+      justify-content: center;
+    }
+    &__btn {
+      width: 125px;
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .hero {
+    &__center-border {
+      padding: 13px 12px;
+    }
+
+    &__center-photo {
+      height: 510px;
+    }
+
   }
 }
