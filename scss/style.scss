@@ -258,6 +258,88 @@
   }
 }
 
+.steps {
+  background-color: $red;
+  padding-bottom: fluid(150, 80);
+
+  &__title {
+    max-width: 625px;
+    margin-inline: auto;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    max-width: 510px;
+    margin-inline: auto;
+    margin-bottom: 45px;
+  }
+
+  &__items {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 62px;
+  }
+
+  &__item {
+    flex: 1 1 33.333%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 40px 20px;
+    background-color: $white;
+    border-radius: 20px;
+    color: $black;
+  }
+
+  &__name {
+    flex: 1 0 136px;
+    width: 136px;
+    height: 48px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: $white;
+
+    &_red {
+      background-color: $red;
+    }
+
+    &_green {
+      background-color: $green;
+    }
+
+    &_yellow {
+      background-color: $yellow;
+    }
+  }
+
+  &__definition {
+    max-width: 200px;
+    text-align: start;
+  }
+
+  &__photo {
+    position: relative;
+    max-width: 860px;
+    height: 475px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+
+  &__img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+  }
+}
+
 .footer {
   color: $red;
   padding-block: 80px;
@@ -363,6 +445,7 @@
     margin-bottom: 20px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
+
     &:hover {
       border-color: $red;
     }
