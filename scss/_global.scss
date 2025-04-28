@@ -28,6 +28,22 @@ body {
   text-align: center;
 }
 
+.menu {
+  &__list {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $red;
+    }
+  }
+}
+
 .title {
   font-size: 40px;
   line-height: 1.1;
