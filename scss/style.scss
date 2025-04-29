@@ -340,6 +340,144 @@
   }
 }
 
+.fruits {
+  background-color: $red;
+  padding-bottom: fluid(150, 80);
+
+  &__container {}
+
+  &__title {
+    margin-bottom: 14px;
+  }
+
+  &__text {
+    margin-bottom: 44px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    row-gap: fluid(24,7);
+    margin-bottom: 44px;
+  }
+
+  &__card {
+    flex: 0 1 32%;
+    border-radius: 20px;
+    padding: 64px 24px 24px;
+    text-align: start;
+
+    &_straeberry {
+      background-color: #F8766B;
+    }
+
+    &_banana {
+      background-color: #EDD251;
+    }
+
+    &_watermelon {
+      background-color: #9DC262;
+    }
+
+    &_lime {
+      background-color: #BFD663;
+    }
+
+    &_apple {
+      background-color: #E93F29;
+    }
+
+    &_peach {
+      background-color: #DB4F4B;
+    }
+
+    &_plums{
+      background-color: #9B5366;
+    }
+
+    &_orange {
+      background-color: #F47F4C;
+    }
+
+    &_kiwi {
+      background-color: #98B37E;
+    }
+  }
+
+  &__card-name {
+    font-size: fluid(32, 22);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__card-photo {
+    position: relative;
+    padding-bottom: 70%;
+  }
+
+  &__card-img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+  }
+
+  &__card-blur {
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 195px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: $black;
+    filter: blur(10px);
+    opacity: 0.1;
+  }
+
+  &__price {
+    width: 136px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: $white;
+    color: $red;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  &__button {
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background-color: $green;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+    rotate: -14deg;
+    transition: color 0.3s, background-color 0.3s;
+    &::before {
+      font-size: 16px;
+    }
+    span {
+      margin-left: 5px;
+    }
+    &:hover {
+      background-color: $white;
+      color: $green;
+    }
+  }
+}
+
 .footer {
   color: $red;
   padding-block: 80px;

@@ -98,6 +98,10 @@ body {
   letter-spacing: -0.56px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .no-scroll {
   overflow-y: hidden;
 }
@@ -446,6 +450,124 @@ body {
   left: 0;
 }
 
+.fruits {
+  background-color: #ae1332;
+  padding-bottom: clamp(80px, 50.9944751381px + 7.7348066298vw, 150px);
+}
+.fruits__title {
+  margin-bottom: 14px;
+}
+.fruits__text {
+  margin-bottom: 44px;
+}
+.fruits__inner {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+  row-gap: clamp(7px, -0.044198895px + 1.8784530387vw, 24px);
+  margin-bottom: 44px;
+}
+.fruits__card {
+  flex: 0 1 32%;
+  border-radius: 20px;
+  padding: 64px 24px 24px;
+  text-align: start;
+}
+.fruits__card_straeberry {
+  background-color: #F8766B;
+}
+.fruits__card_banana {
+  background-color: #EDD251;
+}
+.fruits__card_watermelon {
+  background-color: #9DC262;
+}
+.fruits__card_lime {
+  background-color: #BFD663;
+}
+.fruits__card_apple {
+  background-color: #E93F29;
+}
+.fruits__card_peach {
+  background-color: #DB4F4B;
+}
+.fruits__card_plums {
+  background-color: #9B5366;
+}
+.fruits__card_orange {
+  background-color: #F47F4C;
+}
+.fruits__card_kiwi {
+  background-color: #98B37E;
+}
+.fruits__card-name {
+  font-size: clamp(22px, 17.8563535912px + 1.1049723757vw, 32px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.fruits__card-photo {
+  position: relative;
+  padding-bottom: 70%;
+}
+.fruits__card-img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.fruits__card-blur {
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 195px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #000;
+  filter: blur(10px);
+  opacity: 0.1;
+}
+.fruits__price {
+  width: 136px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #fff;
+  color: #ae1332;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.fruits__button {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  background-color: #A4CB66;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  rotate: -14deg;
+  transition: color 0.3s, background-color 0.3s;
+}
+.fruits__button::before {
+  font-size: 16px;
+}
+.fruits__button span {
+  margin-left: 5px;
+}
+.fruits__button:hover {
+  background-color: #fff;
+  color: #A4CB66;
+}
+
 .footer {
   color: #ae1332;
   padding-block: 80px;
@@ -599,6 +721,15 @@ body {
     padding-top: 40px;
   }
 }
+@media (max-width: 768px) {
+  .fruits__card {
+    flex: 0 1 49%;
+    margin-inline: auto;
+  }
+  .fruits__card-photo {
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 650px) {
   .container {
     padding-inline: 20px;
@@ -742,6 +873,10 @@ body {
     padding: 20px;
     min-height: 112px;
   }
+  .fruits__card-blur {
+    width: 150px;
+    height: 30px;
+  }
   .footer__container {
     flex-direction: column;
   }
@@ -774,5 +909,24 @@ body {
   }
   .steps__items {
     margin-bottom: 44px;
+  }
+  .fruits__card {
+    padding: 20px 10px 10px;
+  }
+  .fruits__price {
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+  }
+  .fruits__button {
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+  }
+  .fruits__button span {
+    margin-left: 2px;
+  }
+  .fruits__button::before {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */
