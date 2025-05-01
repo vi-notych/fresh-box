@@ -12,15 +12,15 @@
       width: 100%;
     }
 
-    &__center-bg {
-      scale: 0.7;
-
-      &_banana {
+    &__center-wrap {
+      &::before {
+        scale: 0.7;
         top: 40px;
         left: -140px;
       }
 
-      &_strawberry {
+      &::after {
+        scale: 0.8;
         top: -80px;
         right: -80px;
       }
@@ -42,7 +42,7 @@
       max-width: 250px;
     }
 
-    &__btn-box {
+    &__tegs {
       margin-right: -32px;
     }
   }
@@ -93,7 +93,7 @@
       margin-inline: auto;
     }
 
-    &__card-photo {
+    &__photo {
       margin-bottom: 10px;
     }
 
@@ -257,15 +257,15 @@
       margin-bottom: 70px;
     }
 
-    &__center-bg {
-      scale: 0.4;
-
-      &_banana {
+    &__center-wrap {
+      &::before {
+        scale: 0.4;
         top: -45px;
         left: -75px;
       }
 
-      &_strawberry {
+      &::after {
+        scale: 0.6;
         top: -95px;
         right: -20px;
       }
@@ -284,25 +284,24 @@
       margin-bottom: 0;
     }
 
-    &__btn-box {
+    &__tegs {
       margin-bottom: 44px;
       justify-content: center;
+      margin-right: -60px;
     }
 
-    &__btn {
+    &__teg {
       width: 125px;
     }
   }
 
-  .steps {
-    &__item {
-      padding: 20px;
-      min-height: 112px;
-    }
+  .steps__item {
+    padding: 20px;
+    min-height: 112px;
   }
 
-  .fruits {
-    &__card-blur {
+  .fruits__photo {
+    &::after {
       width: 150px;
       height: 30px;
     }
@@ -342,9 +341,11 @@
     &__body {
       padding: 20px;
     }
+
     &__bg {
       display: none;
     }
+
     &__inner {
       flex-direction: column;
       gap: 12px;
@@ -361,6 +362,7 @@
       order: 3;
       width: 16px;
       height: 16px;
+
       &::after {
         content: url(../img/popup/pick-smal.svg);
         top: -4px;
@@ -381,9 +383,11 @@
       padding-bottom: 0%;
       height: 95px;
     }
+
     &__form {
       width: 100%;
     }
+
     &__input {
       height: 46px;
     }

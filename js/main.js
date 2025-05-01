@@ -13,17 +13,16 @@ function mobileMenu() {
   const btn = document.querySelector(".header__button");
   const mobileMenu = document.querySelector(".header__menu");
   const menuList = document.querySelector(".menu__list");
-  const body = document.querySelector("body");
   btn.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
-    body.classList.toggle("none-scroll");
     btn.classList.toggle("active");
+    bodydocument.body.classList.toggle("none-scroll");
   });
   menuList.addEventListener("click", (e) => {
     //console.log(e.target);
     mobileMenu.classList.remove("active");
-    body.classList.remove("none-scroll");
     btn.classList.remove("active");
+    document.body.classList.remove("none-scroll");
   });
 }
 
@@ -31,26 +30,23 @@ function openClosePopup() {
   const popup = document.getElementById("popup");
   const openBtn = document.getElementById("open-btn");
   const openPopup = document.getElementById("open-popup");
-  const body = document.querySelector("body");
   const close = document.getElementById("close");
   const submit = document.getElementById('submit');
   const modalWindow = document.querySelector(".popup__container");
   function addClass() {
     popup.classList.add("active");
-    body.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
   }
   function removeClass() {
     popup.classList.remove("active");
-    body.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
   }
   //===== открываем popup =============================
   openBtn.addEventListener("click", () => addClass());
   openPopup.addEventListener("click", () => addClass());
 
   //===== закрываем popup =============================
-  //--кнопкой "close"
   close.addEventListener("click", () => removeClass());
-  //--кнопкой "submit"
   submit.addEventListener("click", (e) => {
     //console.log(e.target);
     removeClass();

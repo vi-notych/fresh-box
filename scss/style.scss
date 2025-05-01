@@ -100,9 +100,9 @@
     margin-bottom: 60px;
   }
 
-  &__left-img {
+  &__left-img,
+  &__right-img {
     position: relative;
-    padding-bottom: 75%;
 
     img {
       position: absolute;
@@ -114,7 +114,11 @@
     }
   }
 
-  &__left-definition {
+  &__left-img {
+    padding-bottom: 75%;
+  }
+
+  &__left-descr {
     text-transform: uppercase;
     max-width: 150px;
     margin-inline: auto;
@@ -125,6 +129,22 @@
     border-radius: 250px;
     padding: 1px;
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 75%);
+
+    &::before {
+      content: url(../img/hero/banana-blur.png);
+      position: absolute;
+      filter: blur(4px);
+      top: 85px;
+      left: -195px;
+    }
+
+    &::after {
+      content: url(../img/hero/strawberry-blur.png);
+      position: absolute;
+      filter: blur(4px);
+      top: -70px;
+      right: -180px;
+    }
   }
 
   &__center-border {
@@ -163,10 +183,8 @@
     align-items: center;
     justify-content: center;
 
-    &:hover {
-      p {
-        color: $green;
-      }
+    &:hover p {
+      color: $green;
     }
 
     p {
@@ -176,21 +194,6 @@
       font-weight: 500;
       rotate: -14deg;
       transition: color 0.3s;
-    }
-  }
-
-  &__center-bg {
-    position: absolute;
-    filter: blur(3px);
-
-    &_banana {
-      top: 85px;
-      left: -195px;
-    }
-
-    &_strawberry {
-      top: -70px;
-      right: -180px;
     }
   }
 
@@ -211,28 +214,17 @@
   }
 
   &__right-img {
-    margin-bottom: 20px;
-    position: relative;
     padding-bottom: 90%;
     margin-bottom: 20px;
-
-    img {
-      position: absolute;
-      object-fit: cover;
-      height: 100%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
-  &__right-definition {
+  &__right-descr {
     text-transform: uppercase;
     max-width: 155px;
     margin-inline: auto;
   }
 
-  &__btn-box {
+  &__tegs {
     display: flex;
     justify-content: end;
     gap: 8px;
@@ -240,7 +232,7 @@
     margin-left: -60px;
   }
 
-  &__btn {
+  &__teg {
     background-color: transparent;
     border-radius: 20px;
     border: 1px solid $white;
@@ -252,10 +244,6 @@
     justify-content: center;
     text-transform: uppercase;
     transition: background-color 0.3s;
-
-    &:hover {
-      background-color: $red-hover;
-    }
   }
 }
 
@@ -316,7 +304,7 @@
     }
   }
 
-  &__definition {
+  &__descr {
     max-width: 200px;
     text-align: start;
   }
@@ -349,11 +337,11 @@
     margin-bottom: 14px;
   }
 
-  &__text {
+  &__descr {
     margin-bottom: 44px;
   }
 
-  &__inner {
+  &__list {
     display: flex;
     flex-wrap: wrap;
     column-gap: 2%;
@@ -404,37 +392,38 @@
     }
   }
 
-  &__card-name {
+  &__name {
     font-size: fluid(32, 22);
     font-weight: 700;
     margin-bottom: 8px;
   }
 
-  &__card-photo {
+  &__photo {
     position: relative;
     padding-bottom: 70%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 195px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: $black;
+      bottom: -19px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(10px);
+      opacity: 0.1;
+    }
   }
 
-  &__card-img {
+  &__img {
     position: absolute;
     height: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     object-fit: cover;
-  }
-
-  &__card-blur {
-    position: absolute;
-    bottom: -19px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 195px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: $black;
-    filter: blur(10px);
-    opacity: 0.1;
   }
 
   &__price {
@@ -529,8 +518,6 @@
     max-width: 490px;
     margin-inline: auto;
   }
-
-  &__form {}
 
   &__input {
     width: 238px;
@@ -781,6 +768,7 @@
     border-radius: 4px;
     background-color: inherit;
     cursor: pointer;
+
     &::after {
       content: url(../img/popup/pick.svg);
       position: absolute;
@@ -788,6 +776,7 @@
       left: 5px;
       z-index: -1;
     }
+
     &:checked {
       &::after {
         z-index: 1;

@@ -243,11 +243,10 @@ html {
 .hero__left-name {
   margin-bottom: 60px;
 }
-.hero__left-img {
+.hero__left-img, .hero__right-img {
   position: relative;
-  padding-bottom: 75%;
 }
-.hero__left-img img {
+.hero__left-img img, .hero__right-img img {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
@@ -256,7 +255,10 @@ html {
   left: 50%;
   transform: translateX(-50%);
 }
-.hero__left-definition {
+.hero__left-img {
+  padding-bottom: 75%;
+}
+.hero__left-descr {
   text-transform: uppercase;
   max-width: 150px;
   margin-inline: auto;
@@ -266,6 +268,20 @@ html {
   border-radius: 250px;
   padding: 1px;
   background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 75%);
+}
+.hero__center-wrap::before {
+  content: url(../img/hero/banana-blur.png);
+  position: absolute;
+  filter: blur(4px);
+  top: 85px;
+  left: -195px;
+}
+.hero__center-wrap::after {
+  content: url(../img/hero/strawberry-blur.png);
+  position: absolute;
+  filter: blur(4px);
+  top: -70px;
+  right: -180px;
 }
 .hero__center-border {
   background-color: #ae1332;
@@ -312,18 +328,6 @@ html {
   rotate: -14deg;
   transition: color 0.3s;
 }
-.hero__center-bg {
-  position: absolute;
-  filter: blur(3px);
-}
-.hero__center-bg_banana {
-  top: 85px;
-  left: -195px;
-}
-.hero__center-bg_strawberry {
-  top: -70px;
-  right: -180px;
-}
 .hero__right {
   padding-top: 214px;
 }
@@ -338,33 +342,22 @@ html {
   margin-bottom: 20px;
 }
 .hero__right-img {
-  margin-bottom: 20px;
-  position: relative;
   padding-bottom: 90%;
   margin-bottom: 20px;
 }
-.hero__right-img img {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.hero__right-definition {
+.hero__right-descr {
   text-transform: uppercase;
   max-width: 155px;
   margin-inline: auto;
 }
-.hero__btn-box {
+.hero__tegs {
   display: flex;
   justify-content: end;
   gap: 8px;
   flex-wrap: wrap;
   margin-left: -60px;
 }
-.hero__btn {
+.hero__teg {
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #fff;
@@ -376,9 +369,6 @@ html {
   justify-content: center;
   text-transform: uppercase;
   transition: background-color 0.3s;
-}
-.hero__btn:hover {
-  background-color: #b4475d;
 }
 
 .steps {
@@ -430,7 +420,7 @@ html {
 .steps__name_yellow {
   background-color: #F5CE13;
 }
-.steps__definition {
+.steps__descr {
   max-width: 200px;
   text-align: start;
 }
@@ -459,10 +449,10 @@ html {
 .fruits__title {
   margin-bottom: 14px;
 }
-.fruits__text {
+.fruits__descr {
   margin-bottom: 44px;
 }
-.fruits__inner {
+.fruits__list {
   display: flex;
   flex-wrap: wrap;
   -moz-column-gap: 2%;
@@ -503,16 +493,29 @@ html {
 .fruits__card_kiwi {
   background-color: #98B37E;
 }
-.fruits__card-name {
+.fruits__name {
   font-size: clamp(22px, 17.8563535912px + 1.1049723757vw, 32px);
   font-weight: 700;
   margin-bottom: 8px;
 }
-.fruits__card-photo {
+.fruits__photo {
   position: relative;
   padding-bottom: 70%;
 }
-.fruits__card-img {
+.fruits__photo::after {
+  content: "";
+  position: absolute;
+  width: 195px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #000;
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(10px);
+  opacity: 0.1;
+}
+.fruits__img {
   position: absolute;
   height: 100%;
   top: 0;
@@ -520,18 +523,6 @@ html {
   transform: translateX(-50%);
   -o-object-fit: cover;
      object-fit: cover;
-}
-.fruits__card-blur {
-  position: absolute;
-  bottom: -19px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 195px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: #000;
-  filter: blur(10px);
-  opacity: 0.1;
 }
 .fruits__price {
   width: 136px;
@@ -920,14 +911,13 @@ html {
     max-width: 486px;
     width: 100%;
   }
-  .hero__center-bg {
+  .hero__center-wrap::before {
     scale: 0.7;
-  }
-  .hero__center-bg_banana {
     top: 40px;
     left: -140px;
   }
-  .hero__center-bg_strawberry {
+  .hero__center-wrap::after {
+    scale: 0.8;
     top: -80px;
     right: -80px;
   }
@@ -944,7 +934,7 @@ html {
     order: 2;
     max-width: 250px;
   }
-  .hero__btn-box {
+  .hero__tegs {
     margin-right: -32px;
   }
   .steps__items {
@@ -978,7 +968,7 @@ html {
     flex: 0 1 49%;
     margin-inline: auto;
   }
-  .fruits__card-photo {
+  .fruits__photo {
     margin-bottom: 10px;
   }
   .request__title {
@@ -1102,14 +1092,13 @@ html {
   .hero__center-wrap {
     margin-bottom: 70px;
   }
-  .hero__center-bg {
+  .hero__center-wrap::before {
     scale: 0.4;
-  }
-  .hero__center-bg_banana {
     top: -45px;
     left: -75px;
   }
-  .hero__center-bg_strawberry {
+  .hero__center-wrap::after {
+    scale: 0.6;
     top: -95px;
     right: -20px;
   }
@@ -1123,18 +1112,19 @@ html {
   .hero__right-content {
     margin-bottom: 0;
   }
-  .hero__btn-box {
+  .hero__tegs {
     margin-bottom: 44px;
     justify-content: center;
+    margin-right: -60px;
   }
-  .hero__btn {
+  .hero__teg {
     width: 125px;
   }
   .steps__item {
     padding: 20px;
     min-height: 112px;
   }
-  .fruits__card-blur {
+  .fruits__photo::after {
     width: 150px;
     height: 30px;
   }
