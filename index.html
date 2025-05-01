@@ -31,7 +31,7 @@
         <span class="logo__name">fresh harvest box</span>
       </a>
       <div class="header__wrap" data-da=".menu__list,650,last">
-        <a href="#" class="header__cart _icon-cart"></a>
+        <div href="#" class="header__cart _icon-cart" id="open-btn"></div>
       </div>
       <button class="header__button" type="button">
         <span></span>
@@ -107,12 +107,14 @@
 
     <section class="steps" id="steps">
       <div class="steps__container container">
-        <div class="steps__title title">
+        <h3 class="steps__title title">
           To order your fruit basket, simply follow these easy steps
-        </div>
+        </h3>
         <p class="steps__text">
-          Our baskets are assembled with care and delivered straight to your doorstep, so you can enjoy the taste of fresh fruit
-          without ever leaving your home. Whether you're looking for a healthy snack or a thoughtful gift, our fruit baskets are
+          Our baskets are assembled with care and delivered straight to your doorstep, so you can enjoy the taste of
+          fresh fruit
+          without ever leaving your home. Whether you're looking for a healthy snack or a thoughtful gift, our fruit
+          baskets are
           the perfect choice.
         </p>
         <div class="steps__items">
@@ -143,11 +145,13 @@
 
     <section class="fruits" id="fruits">
       <div class="fruits__container container">
-        <div class="fruits__title title">
+        <h3 class="fruits__title title">
           organic fruits
-        </div>
+        </h3>
         <p class="fruits__text">
-          Our organic fruits are hand-picked from local farms and delivered straight to your doorstep, ensuring that you get the freshest and most nutritious produce possible. We offer a wide selection of organic fruits grown without the use of
+          Our organic fruits are hand-picked from local farms and delivered straight to your doorstep, ensuring that you
+          get the freshest and most nutritious produce possible. We offer a wide selection of organic fruits grown
+          without the use of
           harmful pesticides or chemicals.
         </p>
         <div class="fruits__inner">
@@ -233,7 +237,7 @@
             <div class="fruits__price">90 UAN/kg</div>
           </article>
         </div>
-        <button class="fruits__button _icon-vector">
+        <button class="fruits__button _icon-vector" id="open-popup">
           <span>order</span>
         </button>
       </div>
@@ -241,12 +245,31 @@
 
     <section class="request">
       <div class="request__container container">
-        
+        <h3 class="request__title title">
+          Fresh Harvest Box has got you covered
+        </h3>
+        <div class="request__wrap">
+          <div class="request__photo request__photo_left">
+            <img class="request__img" src="img/request-kiwi.png" alt="kiwi">
+          </div>
+          <div class="request__photo request__photo_right">
+            <img class="request__img" src="img/request-blueberries.png" alt="blueberries">
+          </div>
+        </div>
+        <p class="request__text">
+          Our boxes are packed with delicious, nutritious fruits and vegetables, perfect for anyone looking to eat
+          healthier or
+          support local farmers. Order your box today and start enjoying the best that nature has to offer!
+        </p>
+        <form class="request__form">
+          <input class="request__input" type="text" placeholder="Enter email...">
+          <button class="request__button" type="submit">Send</button>
+        </form>
       </div>
     </section>
-    
+
   </main>
-  
+
   <footer class="footer" id="contacts">
     <div class="footer__container container">
       <div class="footer__wrap">
@@ -284,7 +307,7 @@
             +380 (68) 443-94-26
           </a>
           <div class="footer__location">
-            1678 S. Pioneer Road<br/>
+            1678 S. Pioneer Road<br />
             Salt Lake City<br />
             UT 84104
           </div>
@@ -292,6 +315,65 @@
       </div>
     </div>
   </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup__container">
+      <div class="popup__body">
+        <div class="popup__close" id="close">
+          <img src="img/popup/close.svg" alt="close-svg">
+        </div>
+        <div class="popup__bg">
+          <img class="popup__bg-img" src="img/popup/bg.png" alt="bg-img">
+        </div>
+        <div class="popup__title title">Your Order</div>
+        <div class="popup__inner">
+          <article class="popup__card popup__card__straeberry">
+              <input class="popup__card-input" type="checkbox" checked></input>
+            <div class="popup__card-wrap">
+              <div class="popup__card-name">
+                Strawberry Basket
+              </div>
+              <p class="popup__card-text">Plant</p>
+            </div>
+            <div class="popup__card-photo">
+              <img class="popup__card-img" src="img/popup/basket-1.png" alt="basket">
+            </div>
+          </article>
+          <article class="popup__card popup__card_banana">
+              <input class="popup__card-input" type="checkbox"></input>
+            <div class="popup__card-wrap">
+              <div class="popup__card-name">
+                Apple Basket
+              </div>
+              <p class="popup__card-text">Plant</p>
+            </div>
+            <div class="popup__card-photo">
+              <img class="popup__card-img" src="img/popup/basket-2.png" alt="basket">
+            </div>
+          </article>
+          <article class="popup__card popup__card_watermelon">
+              <input class="popup__card-input" type="checkbox"></input>
+            <div class="popup__card-wrap">
+              <div class="popup__card-name">
+                Fruits Basket
+              </div>
+              <p class="popup__card-text">Plant</p>
+            </div>
+            <div class="popup__card-photo">
+              <img class="popup__card-img" src="img/popup/basket-3.png" alt="basket">
+            </div>
+          </article>
+        </div>
+        <form class="popup__form" action="">
+          <input class="popup__input" type="text" name="name" placeholder="Enter full name...">
+          <input class="popup__input" type="email" name="email" placeholder="Enter email...">
+          <input class="popup__input" type="text" name="adrres" placeholder="Enter address..">
+          <textarea class="popup__textarea" type="text" name="story" placeholder="Enter address.."></textarea>
+          <button class="popup__button" type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/js/main.js"></script>
 </body>
