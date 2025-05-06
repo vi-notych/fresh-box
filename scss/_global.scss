@@ -69,10 +69,8 @@ html {
     font-weight: 700;
   }
 
-  &:hover {
-    .logo__img {
-      scale: 1.1;
-    }
+  &:hover .logo__img {
+    scale: 1.1;
   }
 }
 

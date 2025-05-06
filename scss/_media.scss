@@ -30,9 +30,10 @@
       padding-top: 0;
       order: 1;
       max-width: 250px;
+      margin-right: auto;
     }
 
-    &__left-text {
+    &__text {
       margin-left: -32px;
     }
 
@@ -40,9 +41,10 @@
       padding-top: 0;
       order: 2;
       max-width: 250px;
+      margin-left: auto;
     }
 
-    &__tegs {
+    &__tags {
       margin-right: -32px;
     }
   }
@@ -273,24 +275,33 @@
 
     &__left {
       margin-bottom: 44px;
+      margin-left: auto;
+    }
+
+    &__text {
+      margin-left: -15px;
+      width: 280px;
     }
 
     &__right {
+      margin-right: auto;
       display: flex;
       flex-direction: column-reverse;
     }
 
-    &__right-content {
-      margin-bottom: 0;
+    &__circle {
+      &_yellow {
+        margin-bottom: 0;
+      }
     }
 
-    &__tegs {
+    &__tags {
       margin-bottom: 44px;
       justify-content: center;
       margin-right: -60px;
     }
 
-    &__teg {
+    &__tag {
       width: 125px;
     }
   }

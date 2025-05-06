@@ -225,28 +225,57 @@ html {
 .hero__wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  gap: clamp(20px, -7.3480662983px + 7.2928176796vw, 86px);
+  gap: clamp(5px, -28.5635359116px + 8.9502762431vw, 86px);
 }
 .hero__left {
   padding-top: 286px;
 }
-.hero__left-text {
+.hero__text {
   text-align: start;
   margin-bottom: 44px;
 }
-.hero__left-content {
+.hero__circle {
+  position: relative;
   font-size: 12px;
-  background-color: #A4CB66;
   border-radius: 130px;
   padding: 28px 14px 40px;
+  height: 387px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
-.hero__left-name {
-  margin-bottom: 60px;
+.hero__circle_green {
+  background-color: #A4CB66;
 }
-.hero__left-img, .hero__right-img {
+.hero__circle_yellow {
+  background-color: #F5CE13;
+  margin-bottom: 44px;
+}
+.hero__img {
+  margin-top: auto;
   position: relative;
+  padding-bottom: 79%;
+  z-index: 1;
 }
-.hero__left-img img, .hero__right-img img {
+.hero__img_right {
+  padding-bottom: 85%;
+  margin-bottom: 10px;
+}
+.hero__img::after {
+  content: "";
+  position: absolute;
+  width: 195px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #000;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(10px);
+  opacity: 0.15;
+}
+.hero__img img {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
@@ -254,11 +283,9 @@ html {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
-.hero__left-img {
-  padding-bottom: 75%;
-}
-.hero__left-descr {
+.hero__descr {
   text-transform: uppercase;
   max-width: 150px;
   margin-inline: auto;
@@ -331,33 +358,14 @@ html {
 .hero__right {
   padding-top: 214px;
 }
-.hero__right-content {
-  font-size: 12px;
-  background-color: #F5CE13;
-  border-radius: 130px;
-  padding: 28px 24px 40px;
-  margin-bottom: 44px;
-}
-.hero__right-name {
-  margin-bottom: 20px;
-}
-.hero__right-img {
-  padding-bottom: 90%;
-  margin-bottom: 20px;
-}
-.hero__right-descr {
-  text-transform: uppercase;
-  max-width: 155px;
-  margin-inline: auto;
-}
-.hero__tegs {
+.hero__tags {
   display: flex;
   justify-content: end;
   gap: 8px;
   flex-wrap: wrap;
   margin-left: -60px;
 }
-.hero__teg {
+.hero__tag {
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #fff;
@@ -424,22 +432,14 @@ html {
   max-width: 200px;
   text-align: start;
 }
-.steps__photo {
-  position: relative;
+.steps__img {
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 860px;
+  width: 100%;
   height: 475px;
   border-radius: 20px;
   overflow: hidden;
-  margin-inline: auto;
-}
-.steps__img {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .fruits {
@@ -466,7 +466,7 @@ html {
   padding: 64px 24px 24px;
   text-align: start;
 }
-.fruits__card_straeberry {
+.fruits__card_strawberry {
   background-color: #F8766B;
 }
 .fruits__card_banana {
@@ -513,7 +513,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   filter: blur(10px);
-  opacity: 0.1;
+  opacity: 0.15;
 }
 .fruits__img {
   position: absolute;
@@ -575,7 +575,7 @@ html {
   margin-bottom: -40px;
   z-index: 1;
 }
-.request__wrap {
+.request__gallery {
   display: flex;
   gap: 2%;
   margin-bottom: 80px;
@@ -856,9 +856,6 @@ html {
   left: 50%;
   transform: translateX(-50%);
 }
-.popup__wrap {
-  display: flex;
-}
 .popup__form {
   width: 360px;
 }
@@ -925,16 +922,18 @@ html {
     padding-top: 0;
     order: 1;
     max-width: 250px;
+    margin-right: auto;
   }
-  .hero__left-text {
+  .hero__text {
     margin-left: -32px;
   }
   .hero__right {
     padding-top: 0;
     order: 2;
     max-width: 250px;
+    margin-left: auto;
   }
-  .hero__tegs {
+  .hero__tags {
     margin-right: -32px;
   }
   .steps__items {
@@ -1104,20 +1103,26 @@ html {
   }
   .hero__left {
     margin-bottom: 44px;
+    margin-left: auto;
+  }
+  .hero__text {
+    margin-left: -15px;
+    width: 280px;
   }
   .hero__right {
+    margin-right: auto;
     display: flex;
     flex-direction: column-reverse;
   }
-  .hero__right-content {
+  .hero__circle_yellow {
     margin-bottom: 0;
   }
-  .hero__tegs {
+  .hero__tags {
     margin-bottom: 44px;
     justify-content: center;
     margin-right: -60px;
   }
-  .hero__teg {
+  .hero__tag {
     width: 125px;
   }
   .steps__item {
