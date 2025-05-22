@@ -47,11 +47,17 @@ function openClosePopup() {
 
   //===== закрываем popup =============================
   close.addEventListener("click", () => removeClass());
-  submit.addEventListener("click", () => removeClass());
+  submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    removeClass();
+  });
   //-- нажатием на кнопку "Escape"
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") removeClass();
   });
   //-- кликом на экран вокруг модального окна
-  modalWindow.addEventListener("click", (e) => removeClass());
+  window.addEventListener("click", (e) => {
+    console.log(e.target); 
+    if (e.target === modalWindow) removeClass();
+  });
 }

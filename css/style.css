@@ -179,24 +179,18 @@ html {
 }
 .header__cart {
   position: relative;
-  text-align: right;
-  font-size: 24px;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  transition: border-color 0.3s, background-color 0.3s;
+  height: 24px;
   cursor: pointer;
 }
 .header__cart::before {
+  content: url(../img/icons/cart.svg);
   position: absolute;
-  left: 3px;
-  top: 2px;
+  right: 0;
+  scale: 1;
+  transition: scale 0.3s;
 }
-.header__cart:hover {
-  border-color: #ae1332;
-  background-color: rgba(174, 19, 50, 0.1);
+.header__cart:hover::before {
+  scale: 1.1;
 }
 .header__button {
   display: none;
@@ -677,44 +671,44 @@ html {
   justify-content: space-between;
   align-items: start;
 }
-.footer__icons {
+.footer__socials {
   color: #ae1332;
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 40px;
 }
-.footer__icons ._icon-instagram,
-.footer__icons ._icon-fb,
-.footer__icons ._icon-youtube {
+.footer__socials ._icon-instagram,
+.footer__socials ._icon-fb,
+.footer__socials ._icon-youtube {
   position: relative;
   font-size: 44px;
   transition: background-color 0.3s;
   cursor: pointer;
 }
-.footer__icons ._icon-instagram::before,
-.footer__icons ._icon-fb::before,
-.footer__icons ._icon-youtube::before {
+.footer__socials ._icon-instagram::before,
+.footer__socials ._icon-fb::before,
+.footer__socials ._icon-youtube::before {
   position: absolute;
 }
-.footer__icons ._icon-instagram:hover,
-.footer__icons ._icon-fb:hover,
-.footer__icons ._icon-youtube:hover {
+.footer__socials ._icon-instagram:hover,
+.footer__socials ._icon-fb:hover,
+.footer__socials ._icon-youtube:hover {
   background-color: rgba(174, 19, 50, 0.1);
 }
-.footer__icons ._icon-youtube::before {
+.footer__socials ._icon-youtube::before {
   top: 0px;
   left: 0px;
 }
-.footer__icons ._icon-instagram::before {
+.footer__socials ._icon-instagram::before {
   top: 0px;
   left: -1px;
 }
-.footer__icons ._icon-fb::before {
+.footer__socials ._icon-fb::before {
   top: 3px;
   left: -1px;
 }
-.footer__icon {
+.footer__social {
   width: 44px;
   height: 44px;
   border-radius: 10px;
@@ -885,6 +879,7 @@ html {
 .popup__textarea {
   min-height: 145px;
   margin-bottom: 20px;
+  resize: none;
 }
 .popup__button {
   width: 114px;

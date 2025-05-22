@@ -25,25 +25,21 @@
 
   &__cart {
     position: relative;
-    text-align: right;
-    font-size: 24px;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    transition: border-color 0.3s, background-color 0.3s;
+    height: 24px;
     cursor: pointer;
 
     &::before {
+      content: url(../img/icons/cart.svg);
       position: absolute;
-      left: 3px;
-      top: 2px;
+      right: 0;
+      scale: 1;
+      transition: scale 0.3s;
     }
 
     &:hover {
-      border-color: $red;
-      background-color: rgb(174, 19, 50, 10%);
+      &::before {
+        scale: 1.1;
+      }
     }
   }
 
@@ -592,7 +588,7 @@
     align-items: start;
   }
 
-  &__icons {
+  &__socials {
     color: $red;
     display: flex;
     justify-content: center;
@@ -638,7 +634,7 @@
     }
   }
 
-  &__icon {
+  &__social {
     width: 44px;
     height: 44px;
     border-radius: 10px;
@@ -835,6 +831,7 @@
   &__textarea {
     min-height: 145px;
     margin-bottom: 20px;
+    resize: none;
   }
 
   &__button {
