@@ -1,0 +1,473 @@
+@media (max-width:1050px) {
+  .hero {
+    &__wrapper {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+
+    &__center {
+      order: 0;
+      grid-column: span 2;
+      max-width: 486px;
+      width: 100%;
+    }
+
+    &__center-wrap {
+      &::before {
+        scale: 0.7;
+        top: 40px;
+        left: -140px;
+      }
+
+      &::after {
+        scale: 0.8;
+        top: -80px;
+        right: -80px;
+      }
+    }
+
+    &__left {
+      padding-top: 0;
+      order: 1;
+      max-width: 250px;
+      margin-right: auto;
+    }
+
+    &__text {
+      margin-left: -32px;
+    }
+
+    &__right {
+      padding-top: 0;
+      order: 2;
+      max-width: 250px;
+      margin-left: auto;
+    }
+
+    &__tags {
+      margin-right: -32px;
+    }
+  }
+
+  .steps {
+    &__items {
+      flex-direction: column;
+    }
+
+    &__item {
+      max-width: 390px;
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+  .footer {
+    &__wrap {
+      flex: 0 1 auto;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    &__contacts {
+      padding-top: 40px;
+    }
+  }
+
+  .popup {
+    &__body {
+      width: 700px;
+    }
+
+    &__card-name {
+      font-size: 18px;
+    }
+
+    &__bg {
+      right: -175px;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .fruits {
+    &__card {
+      flex: 0 1 49%;
+      margin-inline: auto;
+    }
+
+    &__photo {
+      margin-bottom: 10px;
+    }
+
+  }
+
+  .request {
+    &__title {
+      margin-bottom: -25px;
+    }
+
+    &__photo {
+      height: 480px;
+
+      &_left,
+      &_right {
+        flex: 1 1 49%;
+      }
+    }
+  }
+}
+
+@media (max-width:650px) {
+  .container {
+    padding-inline: 20px;
+  }
+
+  .header {
+    position: relative;
+
+    &__container {
+      grid-template-columns: 1fr 24px;
+      justify-items: start;
+    }
+
+    &__menu {
+      position: fixed;
+      padding-top: 125px;
+      height: calc(100vh - 50px);
+      width: 100%;
+      margin-left: -20px;
+      top: 50px;
+      background-color: $red;
+      overflow-y: auto;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      z-index: 5;
+
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      & .menu {
+
+        &__list {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          color: $white;
+        }
+
+        &__link {
+          width: fit-content;
+
+          &:hover {
+            border-color: $white;
+          }
+        }
+      }
+    }
+
+    &__cart {
+      z-index: 10;
+
+      &:hover {
+        border-color: $white;
+        background-color: $red-hover;
+
+      }
+    }
+
+    &__button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-inline: 2px;
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        ;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $red;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $red;
+        border-radius: 1px;
+        height: 2px;
+        width: 10px;
+        left: 2px;
+      }
+
+      &::before {
+        top: 5px;
+        transition: rotate 0.2s, top 0.3s 0.2s;
+      }
+
+      &::after {
+        top: 17px;
+        width: 14px;
+        transition: rotate 0.2s, top 0.3s 0.2s;
+      }
+
+      &.active {
+        span {
+          display: none;
+        }
+
+        &::after,
+        &::before {
+          width: 20px;
+          top: 12px;
+        }
+
+        &::before {
+          transition: rotate 0.3s 0.2s, top 0.2s;
+          rotate: 45deg;
+        }
+
+        &::after {
+          transition: rotate 0.3s 0.2s, top 0.2s;
+          rotate: -45deg;
+        }
+      }
+    }
+  }
+
+  .hero {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 0;
+    }
+
+    &__center {
+      grid-column: span 1;
+    }
+
+    &__center-wrap {
+      margin-bottom: 70px;
+    }
+
+    &__center-wrap {
+      &::before {
+        scale: 0.4;
+        top: -45px;
+        left: -75px;
+      }
+
+      &::after {
+        scale: 0.6;
+        top: -95px;
+        right: -20px;
+      }
+    }
+
+    &__left {
+      margin-bottom: 44px;
+      margin-left: auto;
+    }
+
+    &__text {
+      margin-left: -15px;
+      width: 280px;
+    }
+
+    &__right {
+      margin-right: auto;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__circle {
+      &_yellow {
+        margin-bottom: 0;
+      }
+    }
+
+    &__tags {
+      margin-bottom: 44px;
+      justify-content: center;
+      margin-right: -60px;
+    }
+
+    &__tag {
+      width: 125px;
+    }
+  }
+
+  .steps__item {
+    padding: 20px;
+    min-height: 112px;
+  }
+
+  .fruits__photo {
+    &::after {
+      width: 150px;
+      height: 30px;
+    }
+  }
+
+  .footer {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__wrap {
+      gap: 24px;
+    }
+
+    &__box-logo {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__photo {
+      width: auto;
+      max-width: 335px;
+      height: 170px;
+      margin-inline: auto;
+    }
+
+    &__contacts {
+      align-items: center;
+    }
+
+    &__location {
+      text-align: center;
+    }
+  }
+
+  .popup {
+    &__body {
+      padding: 20px;
+    }
+
+    &__bg {
+      display: none;
+    }
+
+    &__inner {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__card {
+      flex: 1 1 100%;
+      display: flex;
+      max-height: 120px;
+      height: 120px;
+    }
+
+    &__card-input {
+      order: 3;
+      width: 16px;
+      height: 16px;
+
+      &::after {
+        content: url(../img/popup/pick-smal.svg);
+        top: -4px;
+        left: 3px;
+      }
+    }
+
+    &__card-name {
+      margin-top: 6px;
+    }
+
+    &__card-wrap {
+      flex: 1 1 65%;
+    }
+
+    &__card-photo {
+      flex: 1 1 35%;
+      padding-bottom: 0%;
+      height: 95px;
+    }
+
+    &__form {
+      width: 100%;
+    }
+
+    &__input {
+      height: 46px;
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .hero {
+    &__center-border {
+      padding: 13px 12px;
+    }
+
+    &__center-photo {
+      height: 510px;
+    }
+
+  }
+
+  .steps {
+    &__items {
+      margin-bottom: 44px;
+    }
+  }
+
+  .fruits {
+    &__card {
+      padding: 20px 10px 10px;
+    }
+
+    &__price {
+      height: 40px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    &__button {
+      width: 80px;
+      height: 80px;
+      font-size: 14px;
+
+      span {
+        margin-left: 2px;
+      }
+
+      &::before {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .request {
+    &__wrap {
+      margin-bottom: 40px;
+    }
+
+    &__photo {
+      height: 460px;
+
+      &_left {
+        flex: 1 1 100%;
+      }
+
+      &_right {
+        display: none;
+      }
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}
