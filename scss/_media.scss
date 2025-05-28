@@ -349,7 +349,7 @@
   }
 
   .popup {
-    &__body {
+    &__order {
       padding: 20px;
     }
 
@@ -401,6 +401,10 @@
 
     &__input {
       height: 46px;
+    }
+
+    &__accepted {
+      padding: 40px 20px;
     }
   }
 }
