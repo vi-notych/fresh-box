@@ -301,12 +301,12 @@
 
   <div class="popup" id="popup">
     <div class="popup__container">
-      <div class="popup__body">
+      <div class="popup__order active" id="order">
         <div class="popup__close" id="close">
           <img src="img/popup/close.svg" alt="close-svg">
         </div>
         <img class="popup__bg" src="img/popup/bg.png" alt="bg-img">
-        <div class="popup__title title">Your Order</div>
+        <h3 class="popup__title title">Your Order</h3>
         <div class="popup__inner">
           <article class="popup__card popup__card__straeberry">
             <input class="popup__card-input" type="checkbox" checked></input>
@@ -345,13 +345,31 @@
             </div>
           </article>
         </div>
-        <form class="popup__form" action="">
-          <input class="popup__input" type="text" name="name" placeholder="Enter full name...">
-          <input class="popup__input" type="email" name="email" placeholder="Enter email...">
-          <input class="popup__input" type="text" name="adrres" placeholder="Enter address..">
+        <form class="popup__form" action="#" id="form">
+          <div class="popup__item">
+            <input class="popup__input" type="text" name="name" id="name" placeholder="Enter full name...">
+          </div>
+          <div class="popup__item">
+            <input class="popup__input" type="email" name="email" id="email" placeholder="Enter email...">
+          </div>
+          <div class="popup__item">
+            <input class="popup__input" type="text" name="adrress" id="address" placeholder="Enter address..">
+          </div>
           <textarea class="popup__textarea" type="text" name="story" placeholder="Enter address.."></textarea>
           <button class="popup__button" type="submit" id="submit">Submit</button>
         </form>
+      </div>
+      <div class="popup__accepted" id="accepted">
+        <div class="popup__accepted-close" id="accepted-close">
+          <img src="img/popup/close-white.svg" alt="icon-close">
+        </div>
+        <div class="popup__accepted-photo">
+          <img class="popup__accepted-img" src="img/popup/raspberry.png" alt="raspberry">
+        </div>
+        <h3 class="popup__accepted-title title">tHANK YOU</h3>
+        <p>
+          Thank you for your order! Our team is preparing your box with fresh, delicious fruits and vegetables, and we'll deliver it straight to your doorstep. We appreciate your business and look forward to providing you with the best possible experience!
+        </p>
       </div>
     </div>
   </div>
